@@ -1,9 +1,10 @@
 import tiktoken
 import pandas as pd
 import openai
+import os
 
 #THIS NEEDS THE OPEN AI API KEY VARIABLE SET
-openai.api_key = "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"
+openai.api_key = os.environ.get('OPENAI_API_KEY')
 
 # Load the cl100k_base tokenizer which is designed to work with the ada-002 model
 tokenizer = tiktoken.get_encoding("cl100k_base")
